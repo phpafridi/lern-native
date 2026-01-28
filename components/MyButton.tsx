@@ -17,7 +17,7 @@ export default function MyButton({title,onPress}:MyButtonProps) {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: "orange", paddingVertical: 15, borderRadius: 10,alignItems:"center"
+        backgroundColor: "orange", paddingVertical: 15, paddingHorizontal:25 , borderRadius: 10,alignItems:"center"
     },
     text: {
         fontSize: 16, color: "white", fontWeight: "bold"
