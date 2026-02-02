@@ -1,7 +1,7 @@
 import MyButton from '@/components/MyButton';
 import { useRouter } from 'expo-router';
 import React from 'react';
-import { Image, TextInput, View } from 'react-native';
+import { Image, ScrollView, TextInput, View } from 'react-native';
 
 export default function login() {
     const router = useRouter();
@@ -10,7 +10,7 @@ export default function login() {
     }
 
     return (
-        <View style={{ flex: 1 }}>
+        <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
             <Image source={require("@/assets/images/login.jpg")} style={{ width: "100%", height: 400 }}
                 resizeMode="cover"
 
@@ -22,9 +22,19 @@ export default function login() {
                 />
                 <TextInput placeholder='Enter Your Password' style={{ borderWidth: 1, height: 50, paddingHorizontal: 20 }}
                  />
+                                 <TextInput placeholder='Enter Your Password' style={{ borderWidth: 1, height: 50, paddingHorizontal: 20 }}
+                 />
+                                 <TextInput placeholder='Enter Your Password' style={{ borderWidth: 1, height: 50, paddingHorizontal: 20 }}
+                 />
+                                 <TextInput placeholder='Enter Your Password' style={{ borderWidth: 1, height: 50, paddingHorizontal: 20 }}
+                 />
+                               <TextInput placeholder='Enter Your Password' style={{ borderWidth: 1, height: 50, paddingHorizontal: 20 }}
+                 />
+                               <TextInput placeholder='Enter Your Password' style={{ borderWidth: 1, height: 50, paddingHorizontal: 20 }}
+                 />
                 <MyButton title={"Login"} onPress={onLogin} />
 
             </View>
-        </View>
+        </ScrollView>
     )
 }
