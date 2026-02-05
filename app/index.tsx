@@ -12,11 +12,18 @@ export default function index() {
         router.navigate("/users");
     }
 
+    const MainPage = () => {
+        router.navigate("/(tabs)");
+    }
+
+
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
             <MyButton title={"Continue"} onPress={onContinue} />
-        
+
             <MyButton title={"Users"} onPress={Users} />
+
+            <MyButton title={"Tabs"} onPress={MainPage} />
         </View>
     )
 }

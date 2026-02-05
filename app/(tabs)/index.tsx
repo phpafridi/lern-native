@@ -9,10 +9,17 @@ export default function HomeScreen() {
 
   useEffect(() => {
     checkToken();
+
   }, []);
 
   const checkToken = async () => {
     const storedToken = await getAuthToken();
+
+    if (!storedToken) {
+      router.replace('/login'); // 🔥 auto redirect
+      return;
+    }
+
     setToken(storedToken);
     console.log('Current token:', storedToken);
   };
@@ -23,20 +30,16 @@ export default function HomeScreen() {
     router.replace('/login');
   };
 
-  if (!token) {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Not logged in</Text>
-        <Button title="Go to Login" onPress={() => router.push('/login')} />
-      </View>
-    );
-  }
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Welcome! You are logged in.</Text>
       <Text>Token exists: {token ? 'Yes' : 'No'}</Text>
       <Button title="Logout" onPress={handleLogout} />
+      <Button
+        title="Go to Main App"
+        onPress={() => router.replace('/login')}
+      />
     </View>
   );
 }
